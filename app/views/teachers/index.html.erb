@@ -1,0 +1,16 @@
+
+  <h1>Teachers</h1>
+
+  Our blog has <%= Teacher.public_count %> teachers and counting!
+
+  <ul>
+    <% @teachers.each do |teacher| %>
+      <% unless teacher.archived? %>
+        <li>
+          <%= link_to teacher.name, teacher %>
+        </li>
+      <% end %>  
+    <% end %>
+  </ul>
+
+  <%= link_to "New Teacher", new_teacher_path %>

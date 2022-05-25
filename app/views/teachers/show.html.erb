@@ -1,0 +1,17 @@
+<h1><%= @teacher.name %></h1>
+
+<p><%= @teacher.subject %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_teacher_path(@teacher) %></li>
+  <li><%= link_to "Destroy", teacher_path(@teacher), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+
+<h2>Students</h2>
+<%= render @teacher.students %>
+
+<h2>Add a student:</h2>
+<%= render 'students/form' %>
