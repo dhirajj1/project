@@ -8,6 +8,8 @@ class StudentsController < ApplicationController
     redirect_to teacher_path(@teacher)
   end
 
+  
+
   def destroy
     @teacher = Teacher.find(params[:teacher_id])
     @student = @teacher.students.find(params[:id])
@@ -17,6 +19,6 @@ class StudentsController < ApplicationController
 
   private
     def student_params
-      params.require(:student).permit(:name, :subject, :status)
+      params.require(:student).permit(:name, :subject)
     end
 end

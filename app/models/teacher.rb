@@ -1,7 +1,7 @@
 class Teacher < ApplicationRecord
-  include Visible
+  
 
-  has_many :students, dependent: :destroy
+  has_many :students
 
   validates :name, presence: true
   validates :subject, presence: true, length: { minimum: 5 }

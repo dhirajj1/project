@@ -1,18 +1,18 @@
-<% unless student.archived? %>
+
   <p>
     <strong>Name:</strong>
     <%= student.name %>
   </p>
-
   <p>
-    <strong>Student:</strong>
+    <strong>Subject:</strong>
     <%= student.subject %>
   </p>
 
+
   <p>
-  <%= link_to "Destroy Student", [student.teacher, student], data: {
-                turbo_method: :delete,
+ <%= link_to "Back", :back, :class => "btn btn-sm btn-warning" %>
+  <%= link_to "delete", [student.teacher, student], :class => "btn btn-sm btn-danger", data: {
+    turbo_method: :delete,
                 turbo_confirm: "Are you sure?"
               } %>
 </p>
-<% end %>

@@ -16,9 +16,20 @@
 
   <body>
   <%= render partial: "shared/navbar" %>
+  <%# <%= render partial: "shared/dashboard" %> 
+  <%= link_to "New Teacher", new_teacher_path, :class => "btn btn-success btn-block float-end"  %>
 
     <div class="container">
-      <%= yield %>
+      <div class="row justify-content-center mt-5">
+        <div class="col-lg-8 col-md-8">
+          <div class="card bx">
+            <div class="card-body">
+               <%= yield %>
+               <%= link_to "Back", :back, :class => "btn btn-warning" %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>  
   </body>
 </html>

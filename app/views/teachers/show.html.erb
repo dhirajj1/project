@@ -2,16 +2,20 @@
 
 <p><%= @teacher.subject %></p>
 
-<ul>
-  <li><%= link_to "Edit", edit_teacher_path(@teacher) %></li>
-  <li><%= link_to "Destroy", teacher_path(@teacher), data: {
+<%= link_to "Edit", edit_teacher_path(@teacher), :class => "btn btn-sm btn-info" %>
+
+<%= link_to "Back", :back, :class => "btn btn-sm btn-warning" %>
+
+<%= link_to "Destroy", teacher_path(@teacher), :class => "btn btn-sm btn-danger", data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
-                  } %></li>
-</ul>
+                  } %>
+
+
 
 <h2>Students</h2>
 <%= render @teacher.students %>
 
+
 <h2>Add a student:</h2>
-<%= render 'students/form' %>
+<%= render 'students/form' %> 

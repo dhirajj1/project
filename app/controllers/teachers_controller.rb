@@ -25,7 +25,7 @@ class TeachersController < ApplicationController
     end
   end
 
-   def edit
+  def edit
     @teacher = Teacher.find(params[:id])
   end
 
@@ -49,6 +49,6 @@ class TeachersController < ApplicationController
 
   private
   def teacher_params
-    params.require(:teacher).permit(:name, :subject, :status)
+    params.require(:teacher).permit(:name, :subject)
   end
 end
